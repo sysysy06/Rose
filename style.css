@@ -1,0 +1,470 @@
+:root {
+  --ink: #22201f;
+  --muted: #69625f;
+  --paper: #fffaf5;
+  --surface: #ffffff;
+  --rose: #b7414b;
+  --rose-dark: #84313a;
+  --leaf: #386a56;
+  --line: #e8ded5;
+  --shadow: 0 18px 45px rgba(45, 32, 28, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 12px clamp(18px, 4vw, 56px);
+  background: rgba(255, 250, 245, 0.92);
+  border-bottom: 1px solid rgba(232, 222, 213, 0.85);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-nav a {
+  padding: 9px 12px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.site-nav a:hover {
+  color: var(--rose);
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 9px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--ink);
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100svh - 104px);
+  display: flex;
+  align-items: center;
+  padding: clamp(64px, 9vw, 118px) clamp(20px, 6vw, 78px);
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(24, 19, 18, 0.78), rgba(24, 19, 18, 0.38) 52%, rgba(24, 19, 18, 0.16)),
+    url("https://github.com/rosehabitat/rose.github.io/blob/main/S11.jpg?raw=true") center / cover;
+}
+
+.hero-copy {
+  width: min(720px, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #ffd7da;
+}
+
+.hero h1,
+.section-heading h2,
+.join-copy h2 {
+  margin: 0;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 8vw, 94px);
+  font-weight: 900;
+}
+
+.hero-lead {
+  max-width: 640px;
+  margin: 24px 0 0;
+  font-size: clamp(17px, 2vw, 22px);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.button.primary {
+  background: var(--rose);
+  color: #fff;
+}
+
+.button.primary:hover {
+  background: var(--rose-dark);
+}
+
+.button.secondary {
+  border-color: rgba(255, 255, 255, 0.72);
+  color: #fff;
+}
+
+.button.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.section {
+  padding: clamp(64px, 9vw, 112px) clamp(20px, 6vw, 78px);
+}
+
+.section-heading {
+  max-width: 860px;
+  margin-bottom: 34px;
+}
+
+.section-heading h2,
+.join-copy h2 {
+  font-size: clamp(32px, 5vw, 58px);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 4vw, 54px);
+  max-width: 1080px;
+}
+
+.intro-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 980px;
+  margin-top: 42px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.stats div {
+  min-height: 126px;
+  padding: 24px;
+  background: var(--surface);
+}
+
+.stats strong {
+  display: block;
+  color: var(--leaf);
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.stats span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.activities-section {
+  background: #f3f1eb;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.activity-group + .activity-group {
+  margin-top: 48px;
+}
+
+.activity-group-title {
+  margin-bottom: 18px;
+}
+
+.activity-group-title h3 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.2;
+}
+
+.activity-card {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  overflow: hidden;
+  min-height: 300px;
+  background: var(--surface);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.activity-card.feature-card {
+  grid-column: 1 / -1;
+  grid-template-columns: 50% 1fr;
+  min-height: 430px;
+}
+
+.activity-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-card div {
+  padding: clamp(22px, 4vw, 46px);
+}
+
+.tag {
+  margin: 0 0 8px;
+  color: var(--leaf);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.activity-card h3 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.25;
+}
+
+.activity-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.timeline-item {
+  min-height: 230px;
+  padding: 28px;
+  background: var(--surface);
+}
+
+.timeline-item span {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--rose);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.timeline-item h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.join-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: clamp(56px, 8vw, 88px) clamp(20px, 6vw, 78px);
+  background:
+    linear-gradient(90deg, rgba(132, 49, 58, 0.93), rgba(56, 106, 86, 0.86)),
+    url("https://github.com/rosehabitat/rose.github.io/blob/main/S20.jpg?raw=true") center / cover;
+  color: #fff;
+}
+
+.join-copy {
+  max-width: 760px;
+}
+
+.join-copy .eyebrow {
+  color: #ffd7da;
+}
+
+.join-copy p:last-child {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px clamp(20px, 6vw, 78px);
+  background: #242221;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    position: absolute;
+    top: 72px;
+    right: 16px;
+    left: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 13px 12px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero {
+    min-height: calc(100svh - 88px);
+    align-items: flex-end;
+    background:
+      linear-gradient(0deg, rgba(24, 19, 18, 0.82), rgba(24, 19, 18, 0.28)),
+      url("https://github.com/rosehabitat/rose.github.io/blob/main/S11.jpg?raw=true") center / cover;
+  }
+
+  .intro-grid,
+  .activity-grid,
+  .activity-card,
+  .activity-card.feature-card,
+  .timeline,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-card,
+  .activity-card.feature-card {
+    min-height: 0;
+  }
+
+  .activity-card img {
+    height: 260px;
+  }
+
+  .join-section,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand span {
+    font-size: 16px;
+  }
+
+  .hero-actions,
+  .button {
+    width: 100%;
+  }
+
+  .section,
+  .join-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .activity-card img {
+    height: 220px;
+  }
+
+  .stats div,
+  .timeline-item {
+    min-height: 0;
+  }
+}
